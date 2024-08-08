@@ -3,7 +3,11 @@ import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
 
-export const HERO_CONTENT = `I am a dedicated full stack developer with a strong foundation in both front-end and back-end technologies. Currently pursuing a Bachelor's degree in Computer Science at Arizona State University, I have gained hands-on experience through various roles, including a Software Developer Internship at ContextQA and multiple positions at ASU. My expertise spans Python, JavaScript, React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. I have successfully designed and implemented web applications, optimized data workflows, and developed automation tools. My goal is to leverage my skills in data analysis, algorithm development, and web development to create innovative solutions that enhance user experiences and drive business growth.`;
+export const HERO_CONTENT = `I’m Aryan Barot, a passionate full stack developer with a solid foundation in both front-end and back-end technologies. I’m currently pursuing a Bachelor's degree in Computer Science at Arizona State University, with hands-on experience from roles like my Software Developer Internship at ContextQA and technical positions at ASU.
+
+My expertise includes Python, C++, C#, JavaScript, React, Node.js, and SQL, and I've successfully built and optimized web applications, developed automation tools, and improved data workflows. I’m driven by a passion for problem-solving and creating innovative solutions that enhance user experiences.
+
+Explore my portfolio to see the projects I've worked on, and let’s connect to discuss how we can collaborate on future tech innovations!`;
 
 export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
 
@@ -12,7 +16,11 @@ export const EXPERIENCES = [
     year: "2024",
     role: "Software Developer Intern",
     company: "ContextQA",
-    description: `Created and updated directed graphs from JSON data files using NetworkX and PyVis. Optimized graph traversal to generate customer journeys with a Depth-First Search algorithm. Developed a web scraping tool with FastAPI and BeautifulSoup to extract and categorize DOM elements. Implemented Edmonds' algorithm for finding optimal paths in graph structures. Improved proficiency in Python programming with NetworkX, PyVis, and BeautifulSoup. Gained experience in setting up API endpoints, handling requests, and returning JSON responses. Enhanced problem-solving skills and ability to work with complex data structures.`,
+    description: `Built graph optimization algorithms for Lululemon website to provide personalized targeted customer experience resulting in 20k+ additional successful orders per month.
+    Visualized user journeys using Networkx and Pyvis, improving user behavior analysis by 25%.
+    Developed an extraction model with BeautifulSoup and NLP, categorizing all the interactive web page elements for accurate identification and classification.
+    Created REST API endpoints with FastAPI for automated testing, enhancing test efficiency by 60%.
+    `,
     technologies: ["Python", "NetworkX", "PyVis", "FastAPI", "BeautifulSoup"],
   },
   {
