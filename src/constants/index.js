@@ -14,6 +14,13 @@ export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer w
 export const EXPERIENCES = [
   {
     year: "2024",
+    role: "Incoming@Coinbase",
+    company: "Coinbase",
+    description: `Incoming at Coinbase.`,
+    technologies: [],
+  },
+  {
+    year: "2024",
     role: "Software Developer Intern",
     company: "ContextQA",
     description: `Built graph optimization algorithms for Lululemon website to provide personalized targeted customer experience resulting in 20k+ additional successful orders per month.
