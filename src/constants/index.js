@@ -13,11 +13,14 @@ export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer w
 
 export const EXPERIENCES = [
   {
-    year: "2024",
-    role: "Incoming@Coinbase",
+    year: "2024 - present",
+    role: "Intern",
     company: "Coinbase",
-    description: `Incoming at Coinbase.`,
-    technologies: [],
+    description: `Migrated blockchain data-fetching code from a legacy pipeline to a new storage system using Python, Go, and AWS S3, significantly enhancing data processing efficiency and scalability.
+    Optimized data processing pipeline, achieving a 50% performance improvement in backfilling staking data, reducing latency and increasing system throughput.
+    Automated the process for finding Slack channels based on Pull Requests, saving engineers 10 hours per week and streamlining communication.
+    Developed and deployed production-level ETL processes for blockchain staking data using SQL, Apache Airflow, and Go, improving transaction accuracy and system performance.`,
+    technologies: ["Python", "Go", "AWS S3", "SQL", "Apache Airflow"],
   },
   {
     year: "2024",
@@ -31,7 +34,7 @@ export const EXPERIENCES = [
     technologies: ["Python", "NetworkX", "PyVis", "FastAPI", "BeautifulSoup"],
   },
   {
-    year: "2022 - Present",
+    year: "2022 - October 2024",
     role: "Data Operations Assistant",
     company: "Arizona State Univrsity - Enterprise Technology",
     description: `Designed a Slack bot to retrieve runbooks from ServiceNow improving incident management time by 20%. Installed and configured servers, firewalls, and power facilities in data centers to support 40+ administrative and research applications and handled their physical maintenance. Led the scrum process for 18 projects using JIRA for agile development in biweekly sprints. Achieved 97% project completion success by managing incidents, tickets, and ServiceNow tasks. Trained and evaluated 4 student workers for their application development and documentation.`,
