@@ -9,7 +9,7 @@ export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer w
 
 export const EXPERIENCES = [
   {
-    year: "2024 - present",
+    year: "Oct 2024 - Present",
     role: "Intern",
     company: "Coinbase",
     description: `Migrated blockchain data-fetching code from a legacy pipeline to a new storage system using Python, Go, and AWS S3, significantly enhancing data processing efficiency and scalability.
@@ -19,7 +19,7 @@ export const EXPERIENCES = [
     technologies: ["Python", "Go", "AWS S3", "SQL", "Apache Airflow"],
   },
   {
-    year: "2024",
+    year: "May 2024 - Aug 2024",
     role: "Software Developer Intern",
     company: "ContextQA",
     description: `Built graph optimization algorithms for Lululemon website to provide personalized targeted customer experience resulting in 20k+ additional successful orders per month.
@@ -30,21 +30,21 @@ export const EXPERIENCES = [
     technologies: ["Python", "NetworkX", "PyVis", "FastAPI", "BeautifulSoup"],
   },
   {
-    year: "2022 - October 2024",
+    year: "Oct 2022 - Oct 2024",
     role: "Data Operations Assistant",
     company: "Arizona State Univrsity - Enterprise Technology",
     description: `Designed a Slack bot to retrieve runbooks from ServiceNow improving incident management time by 20%. Installed and configured servers, firewalls, and power facilities in data centers to support 40+ administrative and research applications and handled their physical maintenance. Led the scrum process for 18 projects using JIRA for agile development in biweekly sprints. Achieved 97% project completion success by managing incidents, tickets, and ServiceNow tasks. Trained and evaluated 4 student workers for their application development and documentation.`,
     technologies: ["Python", "JIRA", "ServiceNow", "Slack"],
   },
   {
-    year: "2022",
+    year: "Aug 2022 - Dec 2022",
     role: "Teaching Assistant",
     company: "ASU - Ira Fulton Schoool Of Engineering",
     description: `Managed a class of 200+ students and held office hours for doubts, discussions, and reviews. Created 25 coding assignments and problem-solving assessments to evaluate student performance. Held interactive group sessions to promote learning and research on the latest industry trends. Assisted the professor in revising the lecture content and managing 4 research projects.`,
     technologies: ["Java"],
   },
   {
-    year: "2022",
+    year: "Jan 2022 - Oct 2022",
     role: "Data Verifier",
     company: "ASU Admission Services",
     description: `Automated cleaning and preprocessing for data of 80k+ students using Python & Pandas scripts. Established standard procedures for verification of transcripts in compliance with university policies.`,
