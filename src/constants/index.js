@@ -12,10 +12,7 @@ export const EXPERIENCES = [
     year: "Oct 2024 - Present",
     role: "Intern",
     company: "Coinbase",
-    description: `Migrated blockchain data-fetching code from a legacy pipeline to a new storage system using Python, Go, and AWS S3, significantly enhancing data processing efficiency and scalability.
-    Optimized data processing pipeline, achieving a 50% performance improvement in backfilling staking data, reducing latency and increasing system throughput.
-    Automated the process for finding Slack channels based on Pull Requests, saving engineers 10 hours per week and streamlining communication.
-    Developed and deployed production-level ETL processes for blockchain staking data using SQL, Apache Airflow, and Go, improving transaction accuracy and system performance.`,
+    description: `Payments risk, staking, fraud detection.`,
     technologies: ["Python", "Go", "AWS S3", "SQL", "Apache Airflow"],
   },
   {
