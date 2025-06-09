@@ -19,10 +19,17 @@ export const EXPERIENCES = [
     year: "May 2024 - Aug 2024",
     role: "Software Developer Intern",
     company: "ContextQA",
-    description: `Built graph optimization algorithms for Lululemon website to provide personalized targeted customer experience resulting in 20k+ additional successful orders per month.
-    Visualized user journeys using Networkx and Pyvis, improving user behavior analysis by 25%.
-    Developed an extraction model with BeautifulSoup and NLP, categorizing all the interactive web page elements for accurate identification and classification.
-    Created REST API endpoints with FastAPI for automated testing, enhancing test efficiency by 60%.
+    description: `Defined user stories and product requirements in collaboration with QA and engineering teams.
+
+Led stakeholder interviews to identify pain points across support and engineering personas.
+
+Owned and prioritized backlog items to support 2–4 week agile sprint cycles.
+
+Conducted user acceptance testing (UAT) and synthesized internal feedback into actionable product improvements.
+
+Designed user journey flows and proposed workflow enhancements for internal QA tooling.
+
+Partnered with analytics to monitor feature adoption and improve internal user behavior insights.
     `,
     technologies: ["Python", "NetworkX", "PyVis", "FastAPI", "BeautifulSoup"],
   },
