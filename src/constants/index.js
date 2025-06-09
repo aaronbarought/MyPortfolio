@@ -12,25 +12,14 @@ export const EXPERIENCES = [
     year: "Oct 2024 - Present",
     role: "Intern",
     company: "Coinbase",
-    description: `Payments risk, staking, fraud detection.`,
+    description: `CX, payments risk, staking, fraud detection.`,
     technologies: ["Python", "Go", "AWS S3", "SQL", "Apache Airflow"],
   },
   {
     year: "May 2024 - Aug 2024",
     role: "Software Developer Intern",
     company: "ContextQA",
-    description: `Defined user stories and product requirements in collaboration with QA and engineering teams.
-
-Led stakeholder interviews to identify pain points across support and engineering personas.
-
-Owned and prioritized backlog items to support 2–4 week agile sprint cycles.
-
-Conducted user acceptance testing (UAT) and synthesized internal feedback into actionable product improvements.
-
-Designed user journey flows and proposed workflow enhancements for internal QA tooling.
-
-Partnered with analytics to monitor feature adoption and improve internal user behavior insights.
-    `,
+    description: `Graph optimization, behavioral analytics, QA automation, internal tooling`,
     technologies: ["Python", "NetworkX", "PyVis", "FastAPI", "BeautifulSoup"],
   },
   {
