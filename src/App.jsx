@@ -1,26 +1,21 @@
-import Contact from "./components/Contact";
-import Experience from "./components/Experience";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+import { Routes, Route, Navigate } from "react-router-dom"
+import Navbar from "./components/Navbar"
+import WorkPage from "./pages/Work"
+import ProjectsPage from "./pages/Projects"
+import EducationPage from "./pages/Education"
 
 const App = () => {
   return (
-    <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-600 selection:text-cyan-900">
-      <div className="fixed top-0 -z-10 h-full w-full bg-neutral-950"></div>
-      <div className="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-
-      <div className="container mx-auto px-8">
-        <Navbar />
-        <Hero />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-      </div>
+    <div className="container-narrow">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Navigate to="/work" replace />} />
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/education" element={<EducationPage />} />
+      </Routes>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

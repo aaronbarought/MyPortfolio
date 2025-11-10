@@ -1,59 +1,43 @@
-import { HERO_CONTENT } from "../constants"
-import profilePic from "../assets/aryan.png"
-import { delay, motion } from "framer-motion"
+// src/components/Hero.jsx
 
-const container = (delay) => ({
-    hidden: {x: -100, opacity: 0},
-    visible: {
-        x:0,
-        opacity: 1,
-        transition: { duration: 0.5, delay: delay}
-
-    }
-})
+const GITHUB_URL   = "https://github.com/aaronbarought";
+const LINKEDIN_URL = "https://www.linkedin.com/in/aryan-barot-73092322b/";
+const RESUME_PATH  = "/Aryan_Barot_Resume.pdf"; // file must live in /public
 
 const Hero = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-36">
-        <div className="flex flex-wrap">
-            <div className="w-full lg:w-1/2">
-                <div className="flex flex-col items-center lg:items-start">
-                    <motion.h1 
-                    variants={container(0)}
-                    initial = "hidden"
-                    animate = "visible"
-                    className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl">Aryan Barot
-                    </motion.h1>
-                    <motion.span 
-                    variants={container(0.5)}
-                    initial = "hidden"
-                    animate = "visible"
-                    className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-4xl tracking-tight text-transparent">
-                    Programmer, Student, Software Developer
-                    </motion.span>
-                    <motion.p 
-                    variants={container(1)}
-                    initial = "hidden"
-                    animate = "visible"
-                    className="my-2 max-w-xl py-6 font-light tracking-tighter bg-gradient-to-r from-gray-300 via-gray-500 to-gray-700 bg-clip-text text-transparent">
-                        {HERO_CONTENT}
-                    </motion.p>
-                </div>
-            </div>
-            {/* <div className="w-full lg:w-1/2 lg:p-8">
-                <div className="flex justify-center">
-                    <motion.img initial={{x:100, opacity:0}}
-                    animate = {{x:0, opacity: 1 }}
-                    transition={{duration: 1, delay: 1.2 }} 
-                    src={profilePic} 
-                    alt="aryan" />
+    <header className="hero">
+      <h1 className="heading-xl">Aryan Barot</h1>
 
-                </div>
-            </div> */}
-        </div>
-      
-    </div>
-  )
-}
+      <div className="hero-links">
+        <a className="btn-outline" href={RESUME_PATH} target="_blank" rel="noopener noreferrer">
+          Resume
+        </a>
 
-export default Hero
+        {/* <-- email opens default mail app */}
+        <a className="btn-outline" href="mailto:cs.aryanbarot@gmail.com">
+          Email
+        </a>
+
+        <a className="btn-outline" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a className="btn-outline" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+      </div>
+
+      <p className="hero-desc">
+        <strong>Software Engineer</strong>
+        <br />
+        I build reliable backends and data pipelines. I’m excited
+        by systems that learn and act in the real world from edge AI to autonomous,
+        self-driving–style experiences.
+      </p>
+
+      <p className="hero-sub">Previously Coinbase, ContextQA, Reyts fintech and ASU Ops.</p>
+    </header>
+  );
+};
+
+export default Hero;
