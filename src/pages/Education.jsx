@@ -17,13 +17,6 @@ const Education = () => {
       bullets: [
         "Solved LeetCode-style problems with peers; deepened DS&A and interview techniques."
       ]
-    },
-    {
-      school: "Arizona State University",
-      degree: "M.S. Computer Science",
-      period: "Pursuing",
-      logo: "https://logo.clearbit.com/asu.edu",
-      bullets: []
     }
   ]
 
