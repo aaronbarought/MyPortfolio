@@ -7,7 +7,7 @@ const EXPERIENCES = [
     logo: "https://logo.clearbit.com/coinbase.com",
     role: "Intern",
     period: "Oct 2024 – Present",
-    bullets: ["CX, Payments, Software"],
+    bullets: ["Blockchain, Payments, Consumer"],
     tags: ["Python", "Go", "AWS S3", "SQL", "Airflow"]
   },
   {
