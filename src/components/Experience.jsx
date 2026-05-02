@@ -3,10 +3,18 @@
 
 const EXPERIENCES = [
   {
+    company: "Intuit Credit Karma",
+    logo: "https://logo.clearbit.com/coinbase.com",
+    role: "Software Engineer Intern - GenAI",
+    period: "May 2026 - Present",
+    bullets: ["GenAI, LLM's, Integrating AI into Financial Products"],
+    tags: ["TBD"]
+  },
+  {
     company: "Coinbase",
     logo: "https://logo.clearbit.com/coinbase.com",
     role: "Intern",
-    period: "Oct 2024 – Present",
+    period: "Oct 2024 – May 2026",
     bullets: ["Blockchain, Payments, Consumer"],
     tags: ["Python", "Go", "AWS S3", "SQL", "Airflow"]
   },
