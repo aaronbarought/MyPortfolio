@@ -2,7 +2,7 @@
 
 const GITHUB_URL   = "https://github.com/aaronbarought";
 const LINKEDIN_URL = "https://www.linkedin.com/in/aryan-barot-73092322b/";
-const RESUME_PATH  = "/Aryan_Barot_Resume.pdf"; // file must live in /public
+const RESUME_PATH  = "/Aryan_Barot_Resume.pdf";
 
 const Hero = () => {
   return (
@@ -11,31 +11,27 @@ const Hero = () => {
 
       <div className="hero-links">
         <a className="btn-outline" href={RESUME_PATH} target="_blank" rel="noopener noreferrer">
-          Resume
+          Resume ↗
         </a>
-
-        {/* <-- email opens default mail app */}
         <a className="btn-outline" href="mailto:cs.aryanbarot@gmail.com">
           Email
         </a>
-
         <a className="btn-outline" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
-          GitHub
+          GitHub ↗
         </a>
         <a className="btn-outline" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
-          LinkedIn
+          LinkedIn ↗
         </a>
       </div>
 
       <p className="hero-desc">
-        <strong>Software Engineer</strong>
-        <br />
-        I build reliable backends and data pipelines. I’m excited
-        by systems that learn and act in the real world from edge AI to autonomous,
-        self-driving–style experiences.
+        <strong>Software Engineer</strong>. I build reliable backends, data pipelines, and
+        systems that ship. Interested in edge AI, autonomous systems, and infrastructure that scales.
       </p>
 
-      <p className="hero-sub">Previously Coinbase, ContextQA, Reyts fintech and ASU Ops.</p>
+      <p className="hero-sub">
+        Currently at Intuit Credit Karma · Previously Coinbase · ContextQA · Reyts · ASU
+      </p>
     </header>
   );
 };
