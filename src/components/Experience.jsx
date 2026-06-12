@@ -1,114 +1,134 @@
-// Experience.jsx
-// Journal-style: logo + company, darker role, light bullets, clean tags line
+// src/components/Experience.jsx
 
 const EXPERIENCES = [
   {
+    company: "Intuit Credit Karma",
+    logo: "/logos/creditkarma.png",
+    fallback: "https://logo.clearbit.com/creditkarma.com",
+    role: "Software Engineer Intern",
+    period: "May 2025 – Present",
+    bullets: [
+      "Personal Loans Team, building features with Generative AI (GenAI).",
+    ],
+    tags: ["GenAI"],
+  },
+  {
     company: "Coinbase",
-    logo: "https://logo.clearbit.com/coinbase.com",
-    role: "Intern",
-    period: "Oct 2024 – Present",
-    bullets: ["Blockchain, Payments, Consumer"],
-    tags: ["Python", "Go", "AWS S3", "SQL", "Airflow"]
+    logo: "/logos/coinbase.png",
+    fallback: "https://logo.clearbit.com/coinbase.com",
+    role: "Software Engineer Intern",
+    period: "Oct 2024 – Jan 2025",
+    bullets: [
+      "Worked on backend infrastructure across the Consumer Experience and Payments teams.",
+      "Built and maintained data pipelines in Python and Go; contributed to AWS S3-based data workflows.",
+      "Wrote SQL queries and used Apache Airflow for orchestration across internal data systems.",
+    ],
+    tags: ["Python", "Go", "AWS S3", "SQL", "Airflow"],
   },
   {
     company: "ContextQA",
-    logo: "https://logo.clearbit.com/contextqa.com",
+    logo: "/logos/contextqa.png",
+    fallback: "https://logo.clearbit.com/contextqa.com",
     role: "Software Developer Intern",
     period: "May 2024 – Jul 2024",
     bullets: [
-      "Built graph optimization algorithms for Lululemon providing personalized targeted customer experience",
-      "Graph optimization, behavioral analytics, QA automation, internal tooling"
+      "Built graph optimization algorithms for Lululemon's personalization pipeline using NetworkX and PyVis.",
+      "Improved customer targeting through behavioral analytics; integrated FastAPI endpoints for internal tooling.",
+      "Automated QA workflows and scraped structured data with BeautifulSoup.",
     ],
-    tags: ["Python", "NetworkX", "PyVis", "FastAPI", "BeautifulSoup"]
+    tags: ["Python", "NetworkX", "PyVis", "FastAPI", "BeautifulSoup"],
   },
   {
     company: "Arizona State University",
-    logo: "https://logo.clearbit.com/asu.edu",
+    logo: "/logos/asu.png",
+    fallback: "https://logo.clearbit.com/asu.edu",
     role: "Data Operations Assistant",
     period: "Oct 2022 – Oct 2024",
     bullets: [
-      "Built Slack bot for ServiceNow runbooks reducing response time for ASU Ops: −20% incident response time.",
-      "Supported 40+ apps; led Scrum for 18 projects (97% completion).",
-      "Data integrity, Incident management, IT infrastructure"
+      "Built a Slack bot that surfaces ServiceNow runbooks in real time, cutting incident response time by ~20%.",
+      "Supported 40+ enterprise applications; led Scrum across 18 concurrent projects (97% on-time).",
+      "Owned data integrity and incident management workflows for ASU IT infrastructure.",
     ],
-    tags: ["Python", "ServiceNow", "JIRA", "Slack API"]
+    tags: ["Python", "ServiceNow", "JIRA", "Slack API"],
   },
-
-  // --- NEW ENTRIES YOU ASKED FOR ---
   {
-    company: "ASU – Ira A. Fulton Schools of Engineering",
-    logo: "https://logo.clearbit.com/asu.edu",
+    company: "ASU – Fulton Schools of Engineering",
+    logo: "/logos/asu.png",
+    fallback: "https://logo.clearbit.com/asu.edu",
     role: "Teaching Assistant",
     period: "Aug 2022 – Dec 2022",
     bullets: [
-      "Managed 200+ students; held office hours and review sessions.",
-      "Designed 25 coding/assessment tasks; refreshed lecture materials.",
-      "Facilitated interactive groups sessions; supported 4 research projects."
+      "Led office hours and review sessions for 200+ students across intro CS and algorithms courses.",
+      "Designed 25 coding assignments and assessments; refreshed lecture materials each semester.",
+      "Supported 4 active research projects and facilitated weekly study groups.",
     ],
-    // one standout two-word tag as requested
-    tags: ["Java","Algorithms","ML Research"]
+    tags: ["Java", "Algorithms", "ML Research"],
   },
   {
     company: "ASU Admission Services",
-    logo: "https://logo.clearbit.com/asu.edu",
+    logo: "/logos/asu.png",
+    fallback: "https://logo.clearbit.com/asu.edu",
     role: "Data Verifier",
     period: "Jan 2022 – Oct 2022",
     bullets: [
-      "Automated cleaning/preprocessing for 80k+ student records.",
-      "Standardized transcript verification to meet policy."
+      "Automated cleaning and preprocessing for 80k+ student records.",
+      "Standardized transcript verification workflows to meet institutional policy.",
     ],
-    // one standout two-word tag as requested
-    tags: ["Python","Pandas"]
-  }
+    tags: ["Python", "Pandas"],
+  },
 ];
 
-const Logo = ({ src, name }) => {
-  const initials = (name || "?").split(" ").map(w => w[0]).join("").slice(0,2).toUpperCase();
+const Logo = ({ src, fallback, name }) => {
+  const initials = (name || "?").split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
+  const monogram = `data:image/svg+xml;charset=utf8,${encodeURIComponent(
+    `<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'>
+      <rect width='100%' height='100%' rx='8' ry='8' fill='#ede5d8'/>
+      <text x='50%' y='50%' font-family='Georgia,serif' font-size='15' font-weight='700'
+        text-anchor='middle' dominant-baseline='middle' fill='#6e6762'>${initials}</text>
+    </svg>`
+  )}`;
+
+  const handleError = (e) => {
+    const tried = e.currentTarget.dataset.tried;
+    if (!tried && fallback) {
+      e.currentTarget.dataset.tried = "1";
+      e.currentTarget.src = fallback;
+    } else {
+      e.currentTarget.onerror = null;
+      e.currentTarget.src = monogram;
+    }
+  };
+
   return (
-    <img
-      className="logo"
-      src={src}
-      alt={`${name} logo`}
-      onError={(e) => {
-        e.currentTarget.onerror = null;
-        const svg = encodeURIComponent(
-          `<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'>
-            <rect width='100%' height='100%' rx='6' ry='6' fill='#fff'/>
-            <text x='50%' y='58%' font-family='Inter, Arial' font-size='16' text-anchor='middle' fill='#222'>${initials}</text>
-          </svg>`
-        );
-        e.currentTarget.src = `data:image/svg+xml;charset=utf8,${svg}`;
-      }}
-    />
+    <img className="logo" src={src} alt={`${name} logo`} onError={handleError} />
   );
 };
 
 const Experience = () => {
   return (
-    <div className="grid gap-6">
+    <div className="grid gap-2">
       {EXPERIENCES.map((e, i) => (
         <div key={i} className="entry">
           <div className="row">
             <div className="company">
-              <Logo src={e.logo} name={e.company} />
-              <div className="text-[18px] font-semibold">{e.company}</div>
+              <Logo src={e.logo} fallback={e.fallback} name={e.company} />
+              <span className="company-name">{e.company}</span>
             </div>
             <div className="subtle">
               <span className="role">{e.role}</span>
-              {" "}
-              <span className="period">• {e.period}</span>
+              <span className="period">{e.period}</span>
             </div>
           </div>
 
-          <ul className="bullets mt-2 space-y-1">
-            {e.bullets.map((b, j) => <li key={j}>• {b}</li>)}
+          <ul className="bullets mt-2">
+            {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
           </ul>
 
           {e.tags?.length > 0 && (
             <div className="tagsline">
               {e.tags.map((t, j) => (
                 <span key={j}>
-                  {j !== 0 && <span className="sep">•</span>}
+                  {j !== 0 && <span className="sep">·</span>}
                   <span>{t}</span>
                 </span>
               ))}
