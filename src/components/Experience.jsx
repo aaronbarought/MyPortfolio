@@ -2,15 +2,28 @@
 
 const EXPERIENCES = [
   {
+    company: "Visa",
+    logo: "/logos/visa.png",
+    fallback: "https://logo.clearbit.com/visa.com",
+    role: "Software Engineer",
+    period: "Aug 2026 – Present",
+    bullets: [
+      "Building B2B payments infrastructure on the CMS PD team.",
+    ],
+    tags: [],
+  },
+  {
     company: "Intuit Credit Karma",
     logo: "/logos/creditkarma.png",
     fallback: "https://logo.clearbit.com/creditkarma.com",
     role: "Software Engineer Intern",
-    period: "May 2025 – Present",
+    period: "May 2026 – Jul 2026",
     bullets: [
-      "Personal Loans Team, building features with Generative AI (GenAI).",
+      "Built PLAID, an autonomous on-call incident triage agent for the Personal Loans Vertical using GenAI.",
+      "Integrated Splunk and New Relic for real-time failure detection; normalized production logs into structured incident payloads via webhooks and automated alert routing through PagerDuty.",
+      "Authored design doc (RFC) defining data contracts and failure modes before implementation; reduced MTTR across a high-volume financial services platform.",
     ],
-    tags: ["GenAI"],
+    tags: ["Python", "Splunk", "New Relic", "PagerDuty", "GenAI"],
   },
   {
     company: "Coinbase",
