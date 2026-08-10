@@ -30,7 +30,7 @@ const Hero = () => {
       </p>
 
       <p className="hero-sub">
-        Currently at Intuit Credit Karma · Previously Coinbase · ContextQA · Reyts · ASU
+        Currently at Visa · Previously Credit Karma · Coinbase · ContextQA · ASU
       </p>
     </header>
   );
