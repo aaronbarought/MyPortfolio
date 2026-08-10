@@ -19,11 +19,12 @@ const EXPERIENCES = [
     role: "Software Engineer Intern",
     period: "May 2026 – Jul 2026",
     bullets: [
-      "Built PLAID, an autonomous GenAI agent for on-call incident triage on the Personal Loans Vertical.",
-      "Integrated Splunk and New Relic for real-time failure detection; normalized production logs into structured payloads via webhooks and automated routing through PagerDuty.",
-      "Wrote the system design doc (RFC) defining data contracts and failure modes before implementation; measurably reduced MTTR in production.",
+      "Built PLAID, an automated incident first-responder in Python on GCP that polls PagerDuty every 60s, runs AI triage via Claude, and posts diagnosis into Slack threads, reducing mean time to first response for Personal Loans oncall alerts.",
+      "Integrated the New Relic GraphQL API to replay alert condition NRQL, compute z-score deviation across historical firings, and surface FACET breakdowns by partner and error type to classify 4,188+ alerts as noise vs. critical.",
+      "Designed a multi-signal context engine ingesting New Relic metrics, Anodot anomaly scores, o11y MCP (SLOs and deploy correlation), Splunk logs, and runbooks with confidence-gated autoresolution to suppress recurring false positives.",
+      "Shipped 189+ unit tests and an accuracy harness scoring false-negative rate across labeled incidents, plus a coverage map spanning 574 alert conditions to validate triage quality.",
     ],
-    tags: ["Python", "Splunk", "New Relic", "PagerDuty", "GenAI"],
+    tags: ["Python", "GCP", "Claude", "New Relic", "PagerDuty", "Splunk", "Slack API"],
   },
   {
     company: "Coinbase",
