@@ -5,7 +5,7 @@ const EXPERIENCES = [
     company: "Amazon",
     logo: "/logos/amazon.png",
     fallback: "https://cdn.simpleicons.org/amazon/FF9900",
-    role: "Software Engineer",
+    role: "Software Development Engineer",
     period: "Aug 2026 – Present",
     bullets: [
       "Building payment tokenization infrastructure.",
