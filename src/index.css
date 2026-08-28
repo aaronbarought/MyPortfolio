@@ -734,3 +734,94 @@ html[data-theme="dark"] .sticky-note {
   }
   .askme-fab { bottom: 14px; right: 14px; }
 }
+
+/* ===== Paper tag buttons ===== */
+.tag-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-family: "Kalam", serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--page);
+  border: 1px solid var(--label-bd);
+  border-radius: 3px 9px 9px 3px;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.09), 0 3px 8px rgba(0,0,0,0.05);
+  transition: transform 0.16s cubic-bezier(0.34, 1.4, 0.64, 1),
+              box-shadow 0.16s ease,
+              border-left-color 0.16s ease;
+}
+
+/* each tag sits at a slightly different angle, like taped into a notebook */
+.hero-links .tag-btn:nth-child(1) { transform: rotate(-1.4deg); }
+.hero-links .tag-btn:nth-child(2) { transform: rotate(0.9deg); }
+.hero-links .tag-btn:nth-child(3) { transform: rotate(-0.7deg); }
+.hero-links .tag-btn:nth-child(4) { transform: rotate(1.3deg); }
+
+.hero-links .tag-btn:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.14), 0 7px 18px rgba(0,0,0,0.08);
+  border-left-color: #d0584a;
+}
+
+.tag-btn svg { flex-shrink: 0; opacity: 0.75; }
+.tag-btn:hover svg { opacity: 1; }
+
+.tag-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ===== Sticky note affordance ===== */
+/* company names that have a note get an annotated underline + margin mark */
+.company-name.has-note {
+  border-bottom: 1.5px dashed var(--label-bd);
+  cursor: help;
+  transition: border-color 0.15s ease;
+}
+
+.company:hover .company-name.has-note {
+  border-bottom-color: var(--accent);
+}
+
+.company-name.has-note::after {
+  content: "✎";
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 11px;
+  color: var(--light);
+  vertical-align: super;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.company:hover .company-name.has-note::after {
+  color: #d0584a;
+  transform: rotate(-14deg);
+}
+
+/* one-line hint under the section title */
+.section-hint {
+  font-family: "Kalam", serif;
+  font-size: 12.5px;
+  color: var(--light);
+  margin: -12px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.section-hint::before {
+  content: "✎";
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .section-hint { display: none; }
+  .company-name.has-note { border-bottom: none; cursor: default; }
+  .company-name.has-note::after { display: none; }
+  .hero-links .tag-btn { transform: none !important; }
+}

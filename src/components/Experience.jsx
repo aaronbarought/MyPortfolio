@@ -166,7 +166,7 @@ const Experience = () => {
           <div className="row">
             <div className="company">
               <Logo sources={e.sources} name={e.company} />
-              <span className="company-name">{e.company}</span>
+              <span className={`company-name${e.note ? " has-note" : ""}`}>{e.company}</span>
               {e.note && (
                 <span className="sticky-note" role="note">
                   <span className="sn-label">{e.note.label}</span>
