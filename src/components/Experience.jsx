@@ -3,8 +3,11 @@
 const EXPERIENCES = [
   {
     company: "Amazon",
-    logo: "/logos/amazon.png",
-    fallback: "https://cdn.simpleicons.org/amazon/FF9900",
+    sources: [
+      "/logos/amazon.png",
+      "https://www.google.com/s2/favicons?domain=amazon.com&sz=128",
+      "https://cdn.simpleicons.org/amazon/FF9900",
+    ],
     role: "Software Development Engineer",
     period: "Aug 2026 – Present",
     bullets: [
@@ -14,8 +17,11 @@ const EXPERIENCES = [
   },
   {
     company: "Intuit Credit Karma",
-    logo: "/logos/creditkarma.png",
-    fallback: "https://cdn.simpleicons.org/intuit/236CFF",
+    sources: [
+      "/logos/creditkarma.png",
+      "https://www.google.com/s2/favicons?domain=creditkarma.com&sz=128",
+      "https://cdn.simpleicons.org/intuit/236CFF",
+    ],
     role: "Software Engineer Intern",
     period: "May 2026 – Jul 2026",
     bullets: [
@@ -28,8 +34,11 @@ const EXPERIENCES = [
   },
   {
     company: "Coinbase",
-    logo: "/logos/coinbase.png",
-    fallback: "https://cdn.simpleicons.org/coinbase/0052FF",
+    sources: [
+      "/logos/coinbase.png",
+      "https://cdn.simpleicons.org/coinbase/0052FF",
+      "https://www.google.com/s2/favicons?domain=coinbase.com&sz=128",
+    ],
     role: "Software Engineer Intern",
     period: "Oct 2024 – Jan 2025",
     bullets: [
@@ -41,8 +50,10 @@ const EXPERIENCES = [
   },
   {
     company: "ContextQA",
-    logo: "/logos/contextqa.png",
-    fallback: "https://cdn.simpleicons.org/testcafe/36B6E7",
+    sources: [
+      "/logos/contextqa.png",
+      "https://www.google.com/s2/favicons?domain=contextqa.com&sz=128",
+    ],
     role: "Software Developer Intern",
     period: "May 2024 – Jul 2024",
     bullets: [
@@ -54,8 +65,10 @@ const EXPERIENCES = [
   },
   {
     company: "Arizona State University",
-    logo: "/logos/asu.png",
-    fallback: "/logos/asu.png",
+    sources: [
+      "/logos/asu.png",
+      "https://www.google.com/s2/favicons?domain=asu.edu&sz=128",
+    ],
     role: "Data Operations Assistant",
     period: "Oct 2022 – Oct 2024",
     bullets: [
@@ -67,8 +80,10 @@ const EXPERIENCES = [
   },
   {
     company: "ASU – Fulton Schools of Engineering",
-    logo: "/logos/asu.png",
-    fallback: "/logos/asu.png",
+    sources: [
+      "/logos/asu.png",
+      "https://www.google.com/s2/favicons?domain=asu.edu&sz=128",
+    ],
     role: "Teaching Assistant",
     period: "Aug 2022 – Dec 2022",
     bullets: [
@@ -80,8 +95,10 @@ const EXPERIENCES = [
   },
   {
     company: "ASU Admission Services",
-    logo: "/logos/asu.png",
-    fallback: "/logos/asu.png",
+    sources: [
+      "/logos/asu.png",
+      "https://www.google.com/s2/favicons?domain=asu.edu&sz=128",
+    ],
     role: "Data Verifier",
     period: "Jan 2022 – Oct 2022",
     bullets: [
@@ -92,8 +109,16 @@ const EXPERIENCES = [
   },
 ];
 
-const Logo = ({ src, fallback, name }) => {
-  const initials = (name || "?").split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
+export const Logo = ({ sources = [], name }) => {
+  const initials = (name || "?")
+    .replace(/[^A-Za-z ]/g, "")
+    .split(" ")
+    .filter(Boolean)
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
   const monogram = `data:image/svg+xml;charset=utf8,${encodeURIComponent(
     `<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'>
       <rect width='100%' height='100%' rx='8' ry='8' fill='#ede5d8'/>
@@ -103,18 +128,26 @@ const Logo = ({ src, fallback, name }) => {
   )}`;
 
   const handleError = (e) => {
-    const tried = e.currentTarget.dataset.tried;
-    if (!tried && fallback) {
-      e.currentTarget.dataset.tried = "1";
-      e.currentTarget.src = fallback;
+    const el = e.currentTarget;
+    const next = Number(el.dataset.idx || 0) + 1;
+    if (next < sources.length) {
+      el.dataset.idx = String(next);
+      el.src = sources[next];
     } else {
-      e.currentTarget.onerror = null;
-      e.currentTarget.src = monogram;
+      el.onerror = null;
+      el.src = monogram;
     }
   };
 
   return (
-    <img className="logo" src={src} alt={`${name} logo`} onError={handleError} />
+    <img
+      className="logo"
+      src={sources[0] || monogram}
+      data-idx="0"
+      alt={`${name} logo`}
+      loading="lazy"
+      onError={handleError}
+    />
   );
 };
 
@@ -125,7 +158,7 @@ const Experience = () => {
         <div key={i} className="entry">
           <div className="row">
             <div className="company">
-              <Logo src={e.logo} fallback={e.fallback} name={e.company} />
+              <Logo sources={e.sources} name={e.company} />
               <span className="company-name">{e.company}</span>
             </div>
             <div className="subtle">
