@@ -8,7 +8,8 @@ LinkedIn: https://www.linkedin.com/in/aryan-barot-73092322b/
 GitHub: https://github.com/aaronbarought
 
 EDUCATION
-- Arizona State University, B.S. Computer Science, 2021-2025. GPA 3.54/4.00.
+- Arizona State University, B.S. Computer Science. GRADUATED May 2025. GPA 3.54/4.00.
+  He is no longer a student. He works full-time as a Software Development Engineer at Amazon.
 - Coursework: Data Structures & Algorithms, OOP, Distributed Software Development,
   Software Engineering, Operating Systems, Digital System Design, Mobile App
   Development, Cloud Computing.
@@ -66,7 +67,10 @@ INTERESTS
 Edge AI, autonomous systems, and infrastructure that scales.
 `.trim();
 
-const SYSTEM = `You are a friendly assistant embedded in Aryan Barot's personal portfolio website. You answer visitors' questions about Aryan's background, experience, and skills.
+const today = () =>
+  new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+
+const buildSystem = () => `You are a friendly assistant embedded in Aryan Barot's personal portfolio website. You answer visitors' questions about Aryan's background, experience, and skills.
 
 Rules:
 - Answer ONLY from the profile below. If something isn't covered, say you don't have that detail and point them to Aryan directly at barotaryan1313@gmail.com.
@@ -75,6 +79,11 @@ Rules:
 - Write in third person about Aryan ("He built...", "Aryan worked on...").
 - If asked something off-topic (not about Aryan or his work), redirect politely.
 - Don't use emoji.
+- TODAY'S DATE IS ${today()}. Every date in the profile that falls before today is in
+  the PAST and already finished. Never describe finished things as ongoing or upcoming.
+- Aryan has already graduated. Never say he is "pursuing", "studying", "currently
+  enrolled", or "graduating". Say he graduated from ASU in May 2025.
+- Only the Amazon role is current. Every other role has ended.
 
 PROFILE
 ${BIO}`;
@@ -115,7 +124,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 400,
-        system: SYSTEM,
+        system: buildSystem(),
         messages: trimmed,
       }),
     });
