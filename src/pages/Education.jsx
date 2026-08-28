@@ -7,14 +7,14 @@ const Education = () => {
       degree: "B.S. Computer Science",
       period: "2021 – 2025",
       logo: "/logos/asu.png",
-      fallback: "https://logo.clearbit.com/asu.edu",
+      fallback: "/logos/asu.png",
       bullets: [],
     },
     {
       school: "CodePath",
       degree: "Technical Interview Prep",
       period: "Jun 2024 – Aug 2024",
-      logo: "https://logo.clearbit.com/codepath.org",
+      logo: "https://cdn.simpleicons.org/codeforces/1F8ACB",
       fallback: null,
       bullets: [
         "Solved LeetCode-style problems weekly with peers; strengthened DS&A and interview technique.",

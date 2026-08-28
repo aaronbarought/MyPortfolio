@@ -2,20 +2,20 @@
 
 const EXPERIENCES = [
   {
-    company: "Visa",
-    logo: "/logos/visa.png",
-    fallback: "https://logo.clearbit.com/visa.com",
+    company: "Amazon",
+    logo: "/logos/amazon.png",
+    fallback: "https://cdn.simpleicons.org/amazon/FF9900",
     role: "Software Engineer",
     period: "Aug 2026 – Present",
     bullets: [
-      "Building B2B payments infrastructure on the CMS PD team.",
+      "Building payment tokenization infrastructure.",
     ],
     tags: [],
   },
   {
     company: "Intuit Credit Karma",
     logo: "/logos/creditkarma.png",
-    fallback: "https://logo.clearbit.com/creditkarma.com",
+    fallback: "https://cdn.simpleicons.org/intuit/236CFF",
     role: "Software Engineer Intern",
     period: "May 2026 – Jul 2026",
     bullets: [
@@ -29,7 +29,7 @@ const EXPERIENCES = [
   {
     company: "Coinbase",
     logo: "/logos/coinbase.png",
-    fallback: "https://logo.clearbit.com/coinbase.com",
+    fallback: "https://cdn.simpleicons.org/coinbase/0052FF",
     role: "Software Engineer Intern",
     period: "Oct 2024 – Jan 2025",
     bullets: [
@@ -42,7 +42,7 @@ const EXPERIENCES = [
   {
     company: "ContextQA",
     logo: "/logos/contextqa.png",
-    fallback: "https://logo.clearbit.com/contextqa.com",
+    fallback: "https://cdn.simpleicons.org/testcafe/36B6E7",
     role: "Software Developer Intern",
     period: "May 2024 – Jul 2024",
     bullets: [
@@ -55,7 +55,7 @@ const EXPERIENCES = [
   {
     company: "Arizona State University",
     logo: "/logos/asu.png",
-    fallback: "https://logo.clearbit.com/asu.edu",
+    fallback: "/logos/asu.png",
     role: "Data Operations Assistant",
     period: "Oct 2022 – Oct 2024",
     bullets: [
@@ -68,7 +68,7 @@ const EXPERIENCES = [
   {
     company: "ASU – Fulton Schools of Engineering",
     logo: "/logos/asu.png",
-    fallback: "https://logo.clearbit.com/asu.edu",
+    fallback: "/logos/asu.png",
     role: "Teaching Assistant",
     period: "Aug 2022 – Dec 2022",
     bullets: [
@@ -81,7 +81,7 @@ const EXPERIENCES = [
   {
     company: "ASU Admission Services",
     logo: "/logos/asu.png",
-    fallback: "https://logo.clearbit.com/asu.edu",
+    fallback: "/logos/asu.png",
     role: "Data Verifier",
     period: "Jan 2022 – Oct 2022",
     bullets: [
