@@ -108,10 +108,52 @@ Rules:
 PROFILE
 ${BIO}`;
 
+
+// --- Lightweight in-memory rate limit ---
+// Caveat: serverless instances are ephemeral and may run in parallel, so this
+// stops casual abuse and runaway loops but is not airtight. The real backstop
+// is a monthly spend cap set in the Anthropic console.
+const WINDOW_MS = 60_000;
+const MAX_PER_WINDOW = 8;
+const hits = new Map();
+
+const clientIp = (req) =>
+  (req.headers["x-forwarded-for"] || "").split(",")[0].trim() ||
+  req.headers["x-real-ip"] ||
+  "unknown";
+
+const rateLimited = (ip) => {
+  const now = Date.now();
+  const recent = (hits.get(ip) || []).filter((t) => now - t < WINDOW_MS);
+
+  if (recent.length >= MAX_PER_WINDOW) {
+    hits.set(ip, recent);
+    return true;
+  }
+
+  recent.push(now);
+  hits.set(ip, recent);
+
+  // opportunistic cleanup so the map can't grow without bound
+  if (hits.size > 500) {
+    for (const [k, v] of hits) {
+      if (!v.some((t) => now - t < WINDOW_MS)) hits.delete(k);
+    }
+  }
+  return false;
+};
+
 export default async function handler(req, res) {
   if (req.method === "OPTIONS") return res.status(204).end();
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  if (rateLimited(clientIp(req))) {
+    res.setHeader("Retry-After", "60");
+    return res.status(429).json({
+      error: "That's a lot of questions at once. Give it a minute and try again.",
+    });
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;

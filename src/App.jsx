@@ -5,6 +5,7 @@ import AskMe from "./components/AskMe"
 import WorkPage from "./pages/Work"
 import ProjectsPage from "./pages/Projects"
 import EducationPage from "./pages/Education"
+import NowPage from "./pages/Now"
 
 const App = () => {
   const location = useLocation()
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/work" element={<WorkPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/education" element={<EducationPage />} />
+          <Route path="/now" element={<NowPage />} />
         </Routes>
       </div>
 
