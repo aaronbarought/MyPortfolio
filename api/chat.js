@@ -55,6 +55,26 @@ EXPERIENCE
 7. ASU Admission Services - Data Verifier (Jan 2022 - Oct 2022)
    - Automated cleaning/preprocessing for 80k+ student records.
 
+PROJECTS
+- Face Recognition on the Edge (2025): on-device real-time face recognition, ~60%
+  lower latency vs server-side inference. MTCNN detection + FaceNet matching, >95%
+  accuracy. Multi-camera deployment via AWS Greengrass, Lambda, SQS.
+- Reyts Fintech App (2024): P2P currency-exchange app in React Native for a Canadian
+  startup. Live FX rates, secure auth, Firestore transactions with offline storage
+  (~40% faster transfers on poor connectivity). Live at https://reyts.com and shipped
+  on the App Store and Google Play.
+- Slack Incident Chatbot (2022-2024): pulls the right ServiceNow runbook into an
+  outage channel in seconds. Cut incident response time ~20% for ASU Ops.
+- Geo-Construct Services (2024): disaster-tracking platform aggregating live
+  earthquake and weather data. C#, ASP.NET, WCF, SOAP.
+- Smart Meal Planner (2025): SwiftUI + Firebase meal planning with grocery lists and
+  MapKit store locator.
+- Gym Progress Tracker (2023-2024): Flask fitness tracker with Matplotlib/Pandas
+  visualizations.
+
+Most of Aryan's professional work is under NDA, so the projects above are the
+publicly shareable ones. Reyts is the only one with a public link.
+
 SKILLS
 Languages: Python, Java, JavaScript, TypeScript, C++, C, C#, Go, Swift, SQL, Ruby
 Frameworks: React, Node.js, Next.js, Vue.js, Tailwind, Flask, .NET, Pandas,

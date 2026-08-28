@@ -22,7 +22,7 @@ const PROJECTS = [
     fallback: "https://cdn.simpleicons.org/firebase/FFCA28",
     role: "Cross-platform Mobile",
     period: "2024",
-    link: null,
+    link: "https://reyts.com",
     bullets: [
       "P2P currency-exchange app in React Native for a Canadian startup; live FX rates and secure auth.",
       "Firestore transactions + offline storage made transfers ~40% faster under poor connectivity.",

@@ -56,7 +56,7 @@ const Hero = () => {
       </div>
 
       <p className="hero-desc">
-        <strong>Software Engineer at Amazon</strong>, working on payment tokenization
+        <strong>Software Development Engineer at Amazon</strong>, working on payment tokenization
         infrastructure. Before this I built PLAID at Credit Karma, a conversational
         agent that triages oncall incidents, and data pipelines at Coinbase moving
         blockchain data at scale. I care about systems that hold up when things go wrong.
