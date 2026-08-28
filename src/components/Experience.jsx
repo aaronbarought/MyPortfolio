@@ -3,6 +3,7 @@
 const EXPERIENCES = [
   {
     company: "Amazon",
+    note: { label: "Team", text: "Payment tokenization infrastructure. Started Aug 2026." },
     sources: [
       "/logos/amazon.png",
       "https://www.google.com/s2/favicons?domain=amazon.com&sz=128",
@@ -17,6 +18,7 @@ const EXPERIENCES = [
   },
   {
     company: "Intuit Credit Karma",
+    note: { label: "Team", text: "Personal Loans Vertical. Built PLAID end to end, from RFC through 189+ tests in production." },
     sources: [
       "/logos/creditkarma.png",
       "https://www.google.com/s2/favicons?domain=creditkarma.com&sz=128",
@@ -34,6 +36,7 @@ const EXPERIENCES = [
   },
   {
     company: "Coinbase",
+    note: { label: "Team", text: "Data platform. Python and Go pipelines feeding blockchain data into AWS S3." },
     sources: [
       "/logos/coinbase.png",
       "https://cdn.simpleicons.org/coinbase/0052FF",
@@ -50,6 +53,7 @@ const EXPERIENCES = [
   },
   {
     company: "ContextQA",
+    note: { label: "Team", text: "Early-stage QA startup. Graph-based test optimization for Lululemon." },
     sources: [
       "/logos/contextqa.png",
       "https://www.google.com/s2/favicons?domain=contextqa.com&sz=128",
@@ -65,6 +69,7 @@ const EXPERIENCES = [
   },
   {
     company: "Arizona State University",
+    note: { label: "Team", text: "ASU IT. Slack bot surfacing ServiceNow runbooks across 40+ enterprise apps." },
     sources: [
       "/logos/asu.png",
       "https://www.google.com/s2/favicons?domain=asu.edu&sz=128",
@@ -80,6 +85,7 @@ const EXPERIENCES = [
   },
   {
     company: "ASU – Fulton Schools of Engineering",
+    note: { label: "Course", text: "Principles of Programming with Java. 200+ students across intro CS and algorithms." },
     sources: [
       "/logos/asu.png",
       "https://www.google.com/s2/favicons?domain=asu.edu&sz=128",
@@ -95,6 +101,7 @@ const EXPERIENCES = [
   },
   {
     company: "ASU Admission Services",
+    note: { label: "Team", text: "Admissions data ops. Automated cleaning for 80k+ student records." },
     sources: [
       "/logos/asu.png",
       "https://www.google.com/s2/favicons?domain=asu.edu&sz=128",
@@ -160,6 +167,12 @@ const Experience = () => {
             <div className="company">
               <Logo sources={e.sources} name={e.company} />
               <span className="company-name">{e.company}</span>
+              {e.note && (
+                <span className="sticky-note" role="note">
+                  <span className="sn-label">{e.note.label}</span>
+                  {e.note.text}
+                </span>
+              )}
             </div>
             <div className="subtle">
               <span className="role">{e.role}</span>
