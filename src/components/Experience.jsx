@@ -43,7 +43,7 @@ const EXPERIENCES = [
       "https://www.google.com/s2/favicons?domain=coinbase.com&sz=128",
     ],
     role: "Software Engineer Intern",
-    period: "Oct 2024 – Jan 2025",
+    period: "Oct 2024 – May 2026",
     bullets: [
       "Migrated blockchain data-fetching from a legacy pipeline to AWS S3 in Python and Go; optimized throughput by 50% and reduced latency.",
       "Automated Slack channel discovery for pull requests, saving engineers 10 hours per week.",

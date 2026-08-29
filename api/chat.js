@@ -33,7 +33,7 @@ EXPERIENCE
    - Shipped 189+ unit tests and an accuracy harness scoring false-negative rate
      across labeled incidents, plus a coverage map spanning 574 alert conditions.
 
-3. Coinbase - Software Engineer Intern (Oct 2024 - Jan 2025)
+3. Coinbase - Software Engineer Intern (Oct 2024 - May 2026)
    - Migrated blockchain data-fetching from a legacy pipeline to AWS S3 in Python
      and Go. Optimized throughput by 50% and reduced latency.
    - Automated Slack channel discovery for pull requests, saving engineers 10 hrs/week.
